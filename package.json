@@ -1,0 +1,26 @@
+{
+  "name": "remote-repo",
+  "version": "1.0.0",
+  "description": "A repository to showcase Github and Git",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Uk/remote-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Uk/remote-repo/issues"
+  },
+  "homepage": "https://github.com/David-Uk/remote-repo#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
