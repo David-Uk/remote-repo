@@ -1,8 +1,19 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
+const mongoose = require('mongoose')
+
+const { PORT, DATABASE } = process.env;
 
 const app = express();
+
+mongoose.connect(DATABASE)
+    .then(() => {
+        console.log('MongoDB connected');
+    })
+    .catch((err) => {
+        console.log('MongoDB connection error:', err);
+    });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -12,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-const { PORT } = process.env;
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' });
